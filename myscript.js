@@ -23,20 +23,19 @@ function getJoke() {
             if (response.hasOwnProperty("setup")) {
                 let setup = response["setup"];
                 let delivery = response["delivery"];
-                if (setup === undefined || delivery === undefined) {
-                    alert("Unable to fetch joke. Please try again later.");
-                } else {
-                    renderJoke(setup, delivery);
-                }
+                renderJoke(setup, delivery);
             } else if (response.hasOwnProperty("jokes")) {
                 renderMultipleJokes(response["jokes"]);
+            } else if (response.hasOwnProperty("message")) {
+                displayPopup(`Couldn't find a joke with the term ${term}`);
             }
         }
-        const form = document.getElementById("myForm");
-        form.reset();
     };
+    const form = document.getElementById("myForm");
+    form.reset();
     xhr.send();
 }
+
 
 function renderJoke(setup, delivery) {
     let jokeContainer = document.querySelector("#joke");
@@ -56,4 +55,16 @@ function renderMultipleJokes(jokes) {
             jokeContainer.appendChild(jokeElement);
         }
     });
+}
+
+function displayPopup(message) {
+    const popup = document.getElementById("popup");
+    const popupMessage = document.getElementById("popup-message");
+    popupMessage.innerText = message;
+    popup.style.display = "block";
+}
+
+function closePopup() {
+    const popup = document.getElementById("popup");
+    popup.style.display = "none";
 }
