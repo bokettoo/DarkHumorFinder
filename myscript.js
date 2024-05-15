@@ -1,5 +1,3 @@
-import { inject } from "@vercel/analytics"
-
 document.getElementById("myForm").addEventListener("keydown", FindJoke);
 
 function FindJoke(event) {
