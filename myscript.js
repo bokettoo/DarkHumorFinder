@@ -14,7 +14,7 @@ function getJoke() {
 
     let url = "https://v2.jokeapi.dev/joke/Any?type=twopart";
     if (term) url += `&contains=${term}`;
-    if (amount === "1") url += `&amount=${amount}`;
+    if (amount) url += `&amount=${amount}`;
 
     xhr.open("GET", url);
     xhr.onload = function () {
