@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark Jokes</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="analytics.js"></script>
+    
 </head>
 <body>
     <div id="container">
@@ -13,7 +15,7 @@
         <form id="myForm">
             <input type="text" id="term" placeholder="Enter a term">
             <input type="text" id="amount" placeholder="Number of jokes">
-            <input type="button" value="Find Jokes" onclick="getJoke() ; submitFormOnEnter(event)">
+            <input type="button" value="Find Jokes" onclick="getJoke() ; FindJoke(event)">
         </form>
         <div id="joke"></div>
         <div id="about">
