@@ -116,8 +116,6 @@ h2:hover {
     cursor: pointer;
 }
 
-
-/* Styles for the about section */
 #about {
     margin-top: 20px;
     padding: 20px;
@@ -143,5 +141,15 @@ h2:hover {
 }
 
 #about p:last-child {
-    margin-bottom: 0; /* Remove bottom margin from the last paragraph */
+    margin-bottom: 0;
+}
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer p {
+    margin: 10px 0;
 }
