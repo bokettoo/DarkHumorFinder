@@ -1,9 +1,14 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #121212;
     color: #fff;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,33 +21,20 @@ body {
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     padding: 20px;
-    max-width: 400px;
-    width: 100%;
+    max-width: 90%;
+    width: 300px; /* Adjust as needed */
     text-align: center;
-    animation: slideIn 0.5s ease-in-out forwards;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 input[type="text"],
 input[type="button"] {
     padding: 10px;
-    margin: 5px;
+    margin: 5px 0;
     border: 1px solid #555;
     border-radius: 5px;
     width: calc(100% - 22px);
     background-color: #333;
     color: #fff;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
 input[type="button"] {
@@ -57,7 +49,6 @@ input[type="button"] {
 input[type="button"]:hover {
     background-color: #666;
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 #joke {
@@ -80,7 +71,6 @@ input[type="button"]:hover {
     background-color: #444;
     opacity: 0;
     animation: fadeIn 0.5s forwards, shadowIn 0.5s forwards;
-    transition: transform 0.3s, background-color 0.3s;
 }
 
 @keyframes fadeIn {
@@ -114,8 +104,10 @@ h2:hover {
     cursor: pointer;
 }
 
+/* Adjustments for smaller screens */
 @media only screen and (max-width: 600px) {
     #container {
         max-width: 90%;
+        width: 90%;
     }
 }
